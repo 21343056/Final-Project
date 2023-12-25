@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/img/sepatu.png" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Ruckz Shoes Clean</title>
+      </head>
+  <body>
+    <!-- footer -->
+    {{>header}}
+
+        <!-- banner -->
+      <div class="container-fluid" id="home">
+      <div class="row">
+        <div class="col-12 background">
+          <h1>Service Description</h1>
+          <p>Shoes Clean, Repaint / Recolor and Custom Art</p>
+        </div>
+      </div>
+
+    <div class="isi">
+      <br><br>
+
+      <!-- SHOES CLEAN -->
+      <div class="box" id="sc">
+        <div class="container mt-5" id="about">
+          <h3>SHOES CLEAN</h3>
+          <center>
+            <img src="./img/adidas2.png" width="45%"/>
+            <img src="./img/nike2.png" width="45%" />
+          </center>
+          <br>
+          <p>
+            Jangan biarkan sepatu Anda terlihat kusam, percayakan pada kami untuk
+            membersihkannya dengan baik.
+            Pada layanan Shoes Clean ini merupakan solusi yang bagus untuk membantu
+            Anda menjaga kualitas dan kebersihan sepatu Anda dan Ruckz Cleaning
+            Shoes selalu memakai bahan-bahan terbaik untuk menjaga kualitas sepatu
+            Anda.
+          </p>
+        </div>
+          <a>
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Shoes Clean</button>
+            <button class="btn btn-secondary" onclick="gotoPage('/Pricelist')">Pricelist</button>
+          </a>     
+      </div>
+
+      <!-- WHITENING / UNYELLOWING -->
+      <div class="box" id="wu">
+        <div class="container mt-5" id="about">
+          <h3>WHITENING / UNYELLOWING</h3>
+          <center>
+            <img src="./img/whitening1.png" width="45%"/>
+            <img src="./img/whitening3.png" width="45%" />
+          </center>
+          <br>
+          <p>
+              Layanan Whitening / Unyellowing ini dapat mengembalikan warna putih pada
+            sepatu putih Anda. Pada area midsole yang telah menguning kami dapat
+            mengatasinya dengan mengembalikan kembali warna putih seperti semula.
+            Cairan premium yang kami gunakan diformulasikan untuk menghilangkan
+            Oxidasi dan yellowing atau noda berat pada sepatu.
+          </p>
+        </div>
+          <a>
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Whitening / Unyellowing</button>
+            <button class="btn btn-secondary" onclick="gotoPage('/Pricelist')">Pricelist</button>
+          </a>     
+      </div>
+
+      <!-- REPAINT / RECOLOR -->
+      <div class="box" id="rr">
+        <div class="container mt-5" id="about">
+          <h3>REPAINT / RECOLOR</h3>
+          <center>
+            <img src="./img/repaint1.png" width="45%"/>
+            <img src="./img/repaint2.png" width="45%" />
+          </center>
+          <br>
+          <p>
+              Layanan recolor sepatu dapat memperbaiki penampilan sepatu yang sudah
+            pudar dan membuatnya terlihat seperti baru kembali. Ruckz menggunakan
+            bahan-bahan berkualitas dan teknik yang tepat, layanan ini dapat
+            meningkatkan umur pemakaian sepatu Anda. Hasil akhir dari layanan
+            recolor sepatu dapat disesuaikan dengan preferensi warna dan gaya Anda,
+            sehingga sepatu Anda menjadi lebih personal dan unik.
+          </p>
+        </div>
+          <a>
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Repaint / Recolor</button>
+            <button class="btn btn-secondary" onclick="gotoPage('/Pricelist')">Pricelist</button>
+          </a>     
+      </div>
+
+      <!-- CUSTOM ART -->
+      <div class="box" id="ca">
+        <div class="container mt-5" id="about">
+          <h3>CUSTOM ART</h3>
+          <center>
+            <img src="./img/custom1.png" width="45%"/>
+            <img src="./img/custom2.png" width="45%" />
+          </center>
+          <br>
+          <p>
+              Tingkatkan gaya sepatu Anda dengan layanan Custom Art kami! Dengan
+            sentuhan seni kreatif, kami akan mengubah sepatu Anda menjadi karya seni
+            yang unik dan personal. Tawarkan sepatu yang tidak hanya nyaman, tetapi
+            juga memancarkan gaya dan kepribadian Anda. Dapatkan desain eksklusif
+            yang sesuai dengan selera dan keinginan Anda. Percayakan sepatu Anda
+            kepada ahli seni kami dan buatlah mereka menjadi pusat perhatian di
+            setiap langkah Anda.
+          </p>
+        </div>
+          <a>
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Custom Art</button>
+            <button class="btn btn-secondary" onclick="gotoPage('/Pricelist')">Pricelist</button>
+          </a>     
+      </div>
+
+    </div>
+    <br><br>
+
+    <script>
+      function gotoPage(page) {
+        window.location.href = page;
+      }
+    </script>
+
+    <!-- footer -->
+    {{>footer}}
+
+  </body>
+</html>

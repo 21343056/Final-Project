@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/img/sepatu.png" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Ruckz Shoes Clean</title>
+      </head>
+  <body>
+    <!-- footer -->
+    {{>header}}
+
+        <!-- banner -->
+      <div class="container-fluid" id="home">
+      <div class="row">
+        <div class="col-12 background">
+          <h1>Price List</h1>
+          <p>Shoes Clean, Repaint / Recolor and Custom Art</p>
+        </div>
+      </div>
+
+    <div class="isi">
+      <br><br>
+
+      <!-- <div class="container mt-5">
+        <center>
+          <img src="./img/cuci.jpeg" width="21%" />
+          <img src="./img/fotonya.png" width="45%"/><img src="./img/cuci1.jpeg" width="21%" />
+        </center>
+      </div> -->
+
+      <!-- SHOES CLEAN -->
+      <div class="box">
+        <div class="box">
+          <h3>(SC) Shoes Clean</h3>
+          <p>Sneakers: Rp. 35.000</p>
+          <p>Kids, Ballet, Heels: Rp. 25.000</p>
+          <p>Low: Rp. 40.000</p>
+          <p>High (boots): Rp. 60.000</p>
+        </div>
+        <a>
+          &nbsp;&nbsp;
+          <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Service</button>
+          <button class="btn btn-secondary" onclick="gotoPage('/service_menu')">Description</button>
+        </a>
+      </div>
+
+      <!-- WHITENING / UNYELLOWING -->
+      <div class="box">
+        <div class="box">
+          <h3>(WU) Whitening / Unyellowing</h3>
+          <p>Rp. 60.000</p>
+          <a>
+        </div>
+        <a>
+          &nbsp;&nbsp;
+          <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Service</button>
+          <button class="btn btn-secondary" onclick="gotoPage('/service_menu')">Description</button>
+        </a>
+      </div>
+
+      <!-- REPAINT / RECOLOR -->
+      <div class="box">
+        <div class="box">
+          <h3>(RR) Repaint / Recolor</h3>
+          <p>Rp. 100.000 - Rp. 150.000</p>
+        </div>
+        <a>
+          &nbsp;&nbsp;
+          <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Service</button>
+          <button class="btn btn-secondary" onclick="gotoPage('/service_menu')">Description</button>
+        </a>
+      </div>
+
+      <!-- CUSTOM ART -->
+      <div class="box">
+        <div class="box">
+          <h3>(CA) Custom Art</h3>
+          <p>Rp. 350.000 - Rp. 500.000</p>
+        </div>
+        <a>
+          &nbsp;&nbsp;
+          <button class="btn btn-secondary" onclick="gotoPage('/order')">Try Service</button>
+          <button class="btn btn-secondary" onclick="gotoPage('/service_menu')">Description</button>
+        </a>
+      </div>
+
+    </div>
+    <br><br>
+
+    <script>
+      function gotoPage(page) {
+          window.location.href = page;
+      }
+    </script>
+
+    <!-- footer -->
+    {{>footer}}
+
+  </body>
+</html>

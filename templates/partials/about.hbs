@@ -1,0 +1,106 @@
+<!-- about us -->
+<!-- <h1 id="about"></h1> -->
+<div class="container mt-5" id="about">
+  <h1 class="col-12 text-center">About Us</h1>
+  <center>
+    <img src="./img/cuci.jpeg" width="21%" /><img
+      src="./img/fotonya.png"
+      width="45%"
+    /><img src="./img/cuci1.jpeg" width="21%" />
+  </center>
+  <p>
+    <center>
+      <b>Ruckz Cleaning Shoes</b>
+      adalah salah satu jasa untuk membersihkan dan merawat sepatu terbesar di
+      Indonesia. Kami menawarkan berbagai paket dan layanan khusus untuk
+      membantu Anda menjaga kualitas dan kebersihan sepatu Anda.
+    </center>
+  </p>
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <h3>Shoes Clean</h3>
+      <p>
+        Jangan biarkan sepatu Anda terlihat kusam, percayakan pada kami untuk
+        membersihkannya dengan baik.
+      </p>
+      <p>
+        Pada layanan Shoes Clean ini merupakan solusi yang bagus untuk membantu
+        Anda menjaga kualitas dan kebersihan sepatu Anda dan Ruckz Cleaning
+        Shoes selalu memakai bahan-bahan terbaik untuk menjaga kualitas sepatu
+        Anda.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3>Repaint / Recolor</h3>
+      <p>
+        Layanan recolor sepatu dapat memperbaiki penampilan sepatu yang sudah
+        pudar dan membuatnya terlihat seperti baru kembali. Ruckz menggunakan
+        bahan-bahan berkualitas dan teknik yang tepat, layanan ini dapat
+        meningkatkan umur pemakaian sepatu Anda. Hasil akhir dari layanan
+        recolor sepatu dapat disesuaikan dengan preferensi warna dan gaya Anda,
+        sehingga sepatu Anda menjadi lebih personal dan unik.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3>Whitening / Unyellowing</h3>
+      <p>
+        Layanan Whitening / Unyellowing ini dapat mengembalikan warna putih pada
+        sepatu putih Anda. Pada area midsole yang telah menguning kami dapat
+        mengatasinya dengan mengembalikan kembali warna putih seperti semula.
+        Cairan premium yang kami gunakan diformulasikan untuk menghilangkan
+        Oxidasi dan yellowing atau noda berat pada sepatu.
+      </p>
+    </div>
+    <!-- <br> -->
+    <div class="col-md-4">
+      <br />
+      <h3>Custom Art</h3>
+      <p>
+        Tingkatkan gaya sepatu Anda dengan layanan Custom Art kami! Dengan
+        sentuhan seni kreatif, kami akan mengubah sepatu Anda menjadi karya seni
+        yang unik dan personal. Tawarkan sepatu yang tidak hanya nyaman, tetapi
+        juga memancarkan gaya dan kepribadian Anda. Dapatkan desain eksklusif
+        yang sesuai dengan selera dan keinginan Anda. Percayakan sepatu Anda
+        kepada ahli seni kami dan buatlah mereka menjadi pusat perhatian di
+        setiap langkah Anda.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <br />
+      <h3>Coming Soon?!!</h3>
+      <center><img src="./img/box.png" width="55%" /></center>
+    </div>
+    <div class="col-md-4">
+      <br />
+      <h3>Coming Soon?!!</h3>
+      <center><img src="./img/box.png" width="55%" /></center>
+    </div>
+  </div>
+</div>
+
+<!-- adidas -->
+<center>
+  <div class="slide-adidas">
+    <div class="slide"><img src="./img/adidas2.png" alt="" /></div>
+  </div>
+
+  <!-- nike -->
+  <div class="slide-nike">
+    <div class="slide"><img src="./img/nike2.png" alt="" /></div>
+  </div>
+
+  <!-- vans -->
+  <div class="slide-vans">
+    <div class="slide"><img src="./img/vans2.png" alt="" /></div>
+  </div>
+  <br />
+</center>
+<script>
+  let currentIndex = 0; const slides = document.getElementsByClassName("slide");
+  function showSlide(index) { slides[index].style.opacity = "1"; } function
+  hideSlide(index) { slides[index].style.opacity = "0"; } function nextSlide() {
+  hideSlide(currentIndex); currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex); } setInterval(nextSlide, 3000); // ganti gambar
+  setiap 3 detik showSlide(currentIndex); // tunjukkan slide pertama saat mulai
+</script>
+<br /><br />

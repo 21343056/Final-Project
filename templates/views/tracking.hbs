@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/sepatu.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Ruckz Shoes Clean</title>
+  </head>
+  <body>
+    <!-- footer -->
+    {{>header}}
+
+    <div class="container-fluid" id="home">
+
+      <div class="row">
+        <div class="col-12 background">
+          <h1>Tracking Your Shoes</h1>
+          <p>Shoes Clean, Repaint / Recolor and Custom Art</p>
+        </div>
+      </div>
+
+      <!-- Konten -->
+      <div class="isi">
+        <div class="container row row-cols-1 row-cols-md-1 g-4 mt-5">
+
+          <form action="" method="get">
+            <h2>Cek Resi Sepatu</h2>
+            <br>    
+
+            <!-- pilih kurir -->
+            <div class="row mb-2">
+              <label class="col-sm-2 col-form-label" for="exampleFormControlselect1">Pilih Kurir</label>
+              <div class="col-sm-10">
+                <select id="courier_input" class="form-control" name="table" required>
+                  <option value selected hidden>Pilih kurir yang anda gunakan</option>
+                  <option>JNE</option>
+                  <option>Pos Indonesia</option>
+                  <option>JNT</option>
+                  <option>SiCepat</option>
+                  <option>TIKI</option>
+                  <option>AnterAja</option>
+                  <option>Wahana</option>
+                  <option>Ninja</option>
+                  <option>Lion</option>
+                  <option>JET Express</option>
+                  <option>PCP Express</option>
+                  <option>REX Express</option>
+                  <option>First Logistics</option>
+                  <option>ID Express</option>
+                  <option>Shopee Express</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- nomor resi -->
+            <div class="row mb-2">
+              <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Nomor Resi</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="awb_input" placeholder="Masukkan Nomor Resi">
+              </div>
+            </div>
+            <br>
+            
+            <button type="button" class="btn btn-secondary" id="search-button">Submit</button>
+            <button type="reset" class="btn btn-secondary" name="save">Reset</button>
+            <br>
+
+          </form>
+
+        <div class="row" id="resi-status"></div>
+        <div class="row" id="resi-history"></div>
+
+
+
+      </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $("#search-button").on("click", function () {
+      var courier = $("#courier_input").val();
+      var awb = $("#awb_input").val();
+
+      if (courier && awb) {
+        var apiUrl = "https://api.binderbyte.com/v1/track";
+        var apiKey = "cebacb307eb133904b0512e0759c0815af6538eb063181d2ae2293dcfa6a44b6";
+
+        $.ajax({
+          url: apiUrl,
+          type: "get",
+          dataType: "json",
+          data: {
+            api_key: apiKey,
+            courier: courier,
+            awb: awb,
+          },
+          success: function (result) {
+            if (result.status == 200) {
+              var resi = result.data;
+
+              // Menampilkan status resi
+              $("#resi-status").html(`
+                <div class="col-md-10 offset-md-1">
+                  <br>
+                  <br>
+                  <h3>Status Pengiriman :</h3>
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <th scope="row">STATUS</th>
+                        <td>${resi.summary.status}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">LAYANAN</th>
+                        <td>${resi.summary.service}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">PENGIRIM</th>
+                        <td>${resi.detail.shipper}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">ASAL</th>
+                        <td>${resi.detail.origin}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">PENERIMA</th>
+                        <td>${resi.detail.receiver}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">TUJUAN</th>
+                        <td>${resi.detail.destination}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              `);
+
+              // Menampilkan riwayat pengiriman
+              var historyHtml = "";
+              resi.history.forEach(function (item) {
+                historyHtml += `
+                  <tr>
+                    <td>${item.date}</td>
+                    <td>${item.desc}</td>
+                    <td>${item.location}</td>
+                  </tr>
+                `;
+              });
+
+              $("#resi-history").html(`
+                <div class="col-md-10 offset-md-1">
+                  <br>
+                  <h3>Riwayat Pengiriman :</h3>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Lokasi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${historyHtml}
+                    </tbody>
+                  </table>
+                </div>
+              `);
+            } else {
+              $("#resi-status").html(`
+                <div class="col">
+                  <h1 class="text-center">${result.message}</h1>
+                </div>
+              `);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+          },
+        });
+      } else {
+        alert("Pilih kurir dan masukkan nomor resi terlebih dahulu.");
+      }
+    });
+  });
+  
+</script>
+         
+    </div>
+
+    {{>footer}}
+  </body>
+</html>

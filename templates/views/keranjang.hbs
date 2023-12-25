@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/sepatu.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Ruckz Shoes Clean</title>
+  </head>
+  <body>
+    <!-- footer -->
+    {{>header}}
+
+    <div class="container-fluid" id="home">
+      <div class="row">
+        <div class="col-12 background">
+          <h1>Purchase History</h1>
+          <p>Shoes Clean, Repaint / Recolor and Custom Art</p>
+        </div>
+      </div>
+    
+      <!-- Konten -->
+      <div class="isi">
+        <div class="container mt-5">
+          <h2>Ngintip Data</h2>
+          <br>
+    
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID Order</th>
+                  <th>Nama Pelanggan</th>
+                  <th>Merek Sepatu</th>
+                  <th>Tipe Sepatu</th>
+                  <th>Warna Sepatu</th>
+                  <th>Jenis Layanan</th>
+                  <th>Total Bayar</th>
+                  <th>Tanggal Transaksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each orders}}
+                <tr>
+                  <td>{{this.id_order}}</td>
+                  <td>{{this.nama_pelanggan}}</td>
+                  <td>{{this.merek_sepatu}}</td>
+                  <td>{{this.tipe_sepatu}}</td>
+                  <td>{{this.warna_sepatu}}</td>
+                  <td>{{this.jenis_layanan}}</td>
+                  <td>{{this.total_bayar}}</td>
+                  <td>{{this.tanggal_transaksi}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+      {{>footer}}
+    </div>
+
+    {{>footer}}
+  </body>
+</html>
