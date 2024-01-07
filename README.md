@@ -1,0 +1,1 @@
+This program is a shoe cleaning store application designed to fulfill the requirements for the final semester exam. The application offers various menus, including service options and a tracking feature for checking shipment statuses, utilizing the Bynderbit API and storing data in MongoDB.
